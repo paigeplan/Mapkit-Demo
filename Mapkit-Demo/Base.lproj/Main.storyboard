@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Mapkit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d9I-xc-Wxe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d9I-xc-Wxe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mdo-dB-Cle"/>
+                            <constraint firstItem="d9I-xc-Wxe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kyM-nB-fEz"/>
+                            <constraint firstItem="d9I-xc-Wxe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="lyQ-qG-l3u"/>
+                            <constraint firstItem="d9I-xc-Wxe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="oKY-y8-6gY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapview" destination="d9I-xc-Wxe" id="9pF-rv-wgl"/>
+                        <segue destination="kdq-7S-x2T" kind="show" identifier="goToNextView" id="weB-Gg-lMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="K6k-oN-QZS">
+            <objects>
+                <viewController id="kdq-7S-x2T" customClass="SecondViewController" customModule="Mapkit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SdF-jg-nQU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Osl-El-ZiT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jd5-ju-Cbe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7M-2e-bJp">
+                                <rect key="frame" x="149.5" y="314.5" width="77.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The coordinates of the selected pin are:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNN-ut-zqN">
+                                <rect key="frame" x="35.5" y="275" width="304" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A7M-2e-bJp" firstAttribute="top" secondItem="ZNN-ut-zqN" secondAttribute="bottom" constant="18.5" id="4Ny-M1-t4J"/>
+                            <constraint firstItem="A7M-2e-bJp" firstAttribute="centerY" secondItem="Jd5-ju-Cbe" secondAttribute="centerY" id="PlW-8R-RxN"/>
+                            <constraint firstItem="A7M-2e-bJp" firstAttribute="centerX" secondItem="Jd5-ju-Cbe" secondAttribute="centerX" id="XW0-gm-bXt"/>
+                            <constraint firstItem="ZNN-ut-zqN" firstAttribute="centerX" secondItem="Jd5-ju-Cbe" secondAttribute="centerX" id="mdk-bh-rrT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="coordinateLabel" destination="A7M-2e-bJp" id="EyY-zZ-ygn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKV-zt-PHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.60000000000002" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>
